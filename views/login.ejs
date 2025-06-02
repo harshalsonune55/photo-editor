@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="/login_style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+        <% if (success && success.length > 0) { %>
+            <div class="flash success"><%= success %></div>
+          <% } %>
+          <% if (error && error.length > 0) { %>
+            <div class="flash error"><%= error %></div>
+          <% } %>
+    <form action="/login" method="POST">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  <p>or <a href="/signup">signup</a></p>
+  </div>
+</body>
+</html>

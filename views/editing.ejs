@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editing</title>
+    <link rel="stylesheet" href="/style_picker.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="card-1">
+        <div style="position: absolute; bottom: 20px; right: 20px;">
+            <form action="/logout" method="post">
+              <button type="submit" class="logout-button">Logout</button>
+            </form>
+          </div>
+        <div class="descripption">
+            <p>&#169; All rights reserved designed and developed by harshal sonune.</p>
+        </div>
+
+        <div class="foot"><p>Designed and developed with By Hs</p></div>
+        <h1>Editor~</h1>
+        <div class="togather">
+
+            <div class="picture">
+                <div class="img" style="background:url(<%=lis.adr%>);
+                  background-size: cover; 
+                background-position: center;
+                background-repeat: no-repeat;">
+                <canvas id="canvas"></canvas>
+                </div>
+                <div class="profile"><div class="pic" style="background:url(<%=lis.adr%>);  background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;"></div><div class="name"><p><%=lis.owner.username%></p></div></div>
+               <div class="hashtag"><p>#BeCreative #BeCool #delulu</p></div>
+                <div class="downlode"><a href=""><i class="fa-solid fa-arrow-down"></i></a></div>
+            </div>
+            <div class="color_picker">
+                <canvas id="colorWheel" width="300" height="300" class="palate" ></canvas>
+                <div id="colorDisplay"></div>
+                <div id="controls">
+                    <input type="text" id="hexInput" placeholder="#FFFFFF">
+                </div>
+                <hr>
+                <div class="other_sett">
+                    <label for="saturation">Saturation:</label>
+                    <input type="range" name="saturation" min="0" max="100" step="0.5" value="0" id="saturation"><br>
+                    <label for="light_shadow">Light and shadow:</label>
+                    <input type="range" name="light_shadow" min="0" max="100" step="0.5" value="20" id="light_shadow"><br>
+                    <label for="Brightness">Brightness:</label>
+                    <input type="range" name="Brightness" min="0" max="100" step="0.5" value="0" id="Brightness"><br>
+                    <label for="Ambiance">Ambiance:</label>
+                    <input type="range" name="Ambiance" min="0" max="100" step="0.5" value="0" id="Ambiance"><br>
+                    <label for="Ambiance">Warmth:</label>
+                    <input type="range" name="Warmth" min="-100" max="100" step="0.5" value="0" id="Warmth">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/color_picker.js"></script>
+</body>
+
+</html>

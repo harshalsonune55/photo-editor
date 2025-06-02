@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="/style_home.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Flash Message Container -->
+  <% if (success && success.length > 0) { %>
+    <div class="flash success"><%= success %></div>
+  <% } %>
+  <% if (error && error.length > 0) { %>
+    <div class="flash error"><%= error %></div>
+  <% } %>
+  <div style="position: absolute; top: 20px; right: 20px;">
+    <form action="/logout" method="post">
+      <button type="submit" class="logout-button">Logout</button>
+    </form>
+  </div>
+
+  <div class="card">
+
+    <div class="card-1">
+      <form action="/profile" method="post" enctype="multipart/form-data">
+        <div class="up-img" onclick="document.getElementById('filechoose').click();">
+          <input type="file" name="picture" id="filechoose" hidden required>
+          <div class="to">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <p class="gi">Drag and Drop to upload file</p>
+            <p class="ins">Supported files: .svg, .jpeg, etc.</p>
+          </div>
+        </div>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+
+    <div class="card-2">
+      <h2>Recent Uploads:</h2>
+      <ul>
+        <% for (li of list) { %>
+          <li><a href="/editing/<%= li._id %>"><%= li.name %></a></li>
+        <% } %>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="/drop.js"></script>
+</body>
+</html>
